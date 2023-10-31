@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Chat Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 style="text-align:center;color:white;">MuBot</h1>
+    <div id="chat-container">
+        <div id="chat">
+            <div class="message bot-message">Hello! How can I help you?</div>
+        </div>
+    </div>
+    <div class="cont">
+    <div id="user-input">
+        <input type="text" id="user_message" placeholder="Type your message..." />
+        <button id="send">Send</button>
+    </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#send').click(function() {
+                var user_message = $('#user_message').val();
+                $('#chat').append('<div class="message user-message">' + user_message + '</div>');
+                $('#user_message').val('');
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/send_message',
+                    data: { user_message: user_message },
+                    success: function(data) {
+                        var bot_response = data.bot_response;
+                        $('#chat').append('<div class="message bot-message">' + bot_response + '</div>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

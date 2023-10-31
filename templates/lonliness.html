@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      flex-direction:columns;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(to bottom, #175d69 23%, #330c43 95%);
+    }
+
+    .image {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+    }
+
+    .music-player {
+      width: 20%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+    }
+
+    .vol {
+      display: flex;
+      justify-content: left;
+      margin-bottom: 0;
+      margin-left: 12px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="range"] {
+      width: 90%;
+      margin: 10px;
+    }
+
+    .progressBar {
+      width: 90%;
+      height: 8px;
+      background-color: #ccc;
+      margin: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0;
+      background-color: #428bca;
+    }
+
+    .row-cont {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <title>Stress</title>
+</head>
+<body>
+  <div class="row-cont">
+    <!-- Block 1 -->
+    <div class="music-player">
+      <div class="image-cont">
+        <img class="image" src="./static/Images/Lonliness1.jpg" alt="">
+      </div>
+      <audio id="audio1" src="./static/music/anxiety(1).mp3"></audio>
+      <div>
+        <button class="playPause" data-audio="audio1">Play</button>
+        <button class="stop" data-audio="audio1">Stop</button>
+      </div>
+      <label class="vol">🔊</label>
+      <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+      <div class="progressBar">
+        <div class="progress" data-audio="audio1"></div>
+      </div>
+    </div>
+    
+    <!-- Block 2 -->
+    <div class="music-player">
+      <div class="image-cont">
+        <img class="image" src="./static/Images/Lonliness2.jpg" alt="">
+      </div>
+      <audio id="audio2" src="./static/music/anxiety(2).mp3"></audio>
+      <div>
+        <button class="playPause" data-audio="audio2">Play</button>
+        <button class="stop" data-audio="audio2">Stop</button>
+      </div>
+      <label class="vol">🔊</label>
+      <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+      <div class="progressBar">
+        <div class="progress" data-audio="audio2"></div>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="music-player">
+      <div class="image-cont">
+        <img class="image" src="./static/Images/Lonliness3.jpg" alt="">
+      </div>
+      <audio id="audio3" src="./static/music/anxiety(3).mp3"></audio>
+      <div>
+        <button class="playPause" data-audio="audio3">Play</button>
+        <button class="stop" data-audio="audio3">Stop</button>
+      </div>
+      <label class="vol">🔊</label>
+      <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+      <div class="progressBar">
+        <div class="progress" data-audio="audio3"></div>
+      </div>
+    </div>
+  </div> 
+  <div class="row-cont">
+    <!-- Block 4 -->
+    <div class="music-player">
+      <div class="image-cont">
+        <img class="image" src="./static/Images/Lonliness4.jpg" alt="">
+      </div>
+      <audio id="audio4" src="./static/music/anxiety(4).mp3"></audio>
+      <div>
+        <button class="playPause" data-audio="audio4">Play</button>
+        <button class="stop" data-audio="audio4">Stop</button>
+      </div>
+      <label class="vol">🔊</label>
+      <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+      <div class="progressBar">
+        <div class="progress" data-audio="audio4"></div>
+      </div>
+    </div>
+
+    <!-- Block 5 -->
+    <div class="music-player">
+      <div class="image-cont">
+        <img class="image" src="./static/Images/Lonliness5.jpg" alt="">
+      </div>
+      <audio id="audio5" src="./static/music/anxiety(5).mp3"></audio>
+      <div>
+        <button class="playPause" data-audio="audio5">Play</button>
+        <button class="stop" data-audio="audio5">Stop</button>
+      </div>
+      <label class="vol">🔊</label>
+      <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+      <div class="progressBar">
+        <div class="progress" data-audio="audio5"></div>
+      </div>
+    </div>
+    
+    <!-- Block 6 -->
+    <div class="music-player">
+      <div class="image-cont">
+        <img class="image" src="./static/Images/Lonliness6.jpg" alt="">
+      </div>
+      <audio id="audio6" src="./static/music/anxiety(1).mp3"></audio>
+      <div>
+        <button class="playPause" data-audio="audio6">Play</button>
+        <button class="stop" data-audio="audio6">Stop</button>
+      </div>
+      <label class="vol">🔊</label>
+      <input type="range" class="volume" min="0" max="1" step="0.01" value="0.5">
+      <div class="progressBar">
+        <div class="progress" data-audio="audio6"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const playPauseButtons = document.querySelectorAll('.playPause');
+    const stopButtons = document.querySelectorAll('.stop');
+    const volumeInputs = document.querySelectorAll('.volume');
+    const progressBars = document.querySelectorAll('.progress');
+
+    playPauseButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const audioId = button.getAttribute('data-audio');
+        const audio = document.getElementById(audioId);
+        if (audio.paused) {
+          audio.play();
+          button.textContent = 'Pause';
+        } else {
+          audio.pause();
+          button.textContent = 'Play';
+        }
+      });
+    });
+
+    stopButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const audioId = button.getAttribute('data-audio');
+        const audio = document.getElementById(audioId);
+        audio.pause();
+        audio.currentTime = 0;
+        const playPauseButton = document.querySelector(`.playPause[data-audio="${audioId}"]`);
+        playPauseButton.textContent = 'Play';
+      });
+    });
+
+    volumeInputs.forEach((input) => {
+      input.addEventListener('input', () => {
+        const audioId = input.getAttribute('data-audio');
+        const audio = document.getElementById(audioId);
+        audio.volume = input.value;
+      });
+    });
+
+    progressBars.forEach((progress) => {
+      const audioId = progress.getAttribute('data-audio');
+      const audio = document.getElementById(audioId);
+      audio.addEventListener('timeupdate', () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progress.style.width = percent + '%';
+      });
+    });
+  </script>
+</body>
+</html>
